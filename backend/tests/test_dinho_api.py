@@ -26,3 +26,23 @@ def test_auth_and_services_crud():
     assert listed.status_code == 200 and any(x["id"] == item_id for x in listed.json())
     deleted = requests.delete(f"{BASE_URL}/api/admin/services/{item_id}", headers=headers, timeout=20)
     assert deleted.status_code == 200 and deleted.json()["ok"] is True
+
+# Dashboard metrics: auth guard + payload shape (added iteration 2)
+def test_dashboard_metrics_auth_and_shape():
+    unauth = requests.get(f"{BASE_URL}/api/dashboard/metrics", timeout=20)
+    assert unauth.status_code in (401, 403), unauth.status_code
+    login = requests.post(f"{BASE_URL}/api/auth/login", json={"email":"admin@dinhorodas.com", "password":"Dinho#2026"}, timeout=20)
+    assert login.status_code == 200
+    headers = {"Authorization": f"Bearer {login.json()['token']}"}
+    metrics = requests.get(f"{BASE_URL}/api/dashboard/metrics", headers=headers, timeout=20)
+    assert metrics.status_code == 200
+    body = metrics.json()
+    for key in ("total_leads", "total_quotes", "new_quotes", "converted"):
+        assert key in body, f"missing {key} in {body}"
+        assert isinstance(body[key], int)
+    assert "_id" not in body
+
+# Bad token must not be accepted (added iteration 2)
+def test_admin_rejects_invalid_token():
+    r = requests.get(f"{BASE_URL}/api/admin/services", headers={"Authorization": "Bearer notavalidtoken"}, timeout=20)
+    assert r.status_code in (401, 403), r.status_code
