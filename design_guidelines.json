@@ -1,0 +1,32 @@
+{
+  "app_name": "Dinho Rodas",
+  "context": "Automotive workshop and alloy wheels specialist in Belo Horizonte, MG",
+  "archetype": "Performance Pro (Elite Athleticism & Precision, high-contrast automotive)",
+  "theme": "dark",
+  "colors": {
+    "primary": "#DC2626",
+    "primary_hover": "#B91C1C",
+    "background_dark": "#0A0A0A",
+    "surface_dark": "#141414",
+    "surface_border": "#262626",
+    "text_main": "#FAFAFA",
+    "text_muted": "#A3A3A3",
+    "accent_red": "#EF4444"
+  },
+  "typography": {
+    "heading_font": "Barlow Condensed, sans-serif",
+    "body_font": "Inter, sans-serif"
+  },
+  "image_urls": {
+    "hero_wheel": "https://images.unsplash.com/photo-1611838608826-4c32a6160d90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBjYXIlMjB3aGVlbHMlMjByaW0lMjByZXBhaXJ8ZW58MHx8fHwxNzg4MjkwNTg1fDA&ixlib=rb-4.1.0&q=85",
+    "workshop_interior": "https://images.unsplash.com/photo-1786489623872-2ebdfe51297c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHxjYXIlMjBhbGxveSUyMHdoZWVscyUyMGdhcmFnZSUyMHdvcmtzaG9wfGVufDB8fHx8MTc4ODI5MDU4MXww&ixlib=rb-4.1.0&q=85",
+    "rim_closeup": "https://images.unsplash.com/photo-1611633235555-45e252fe48c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBjYXIlMjB3aGVlbHMlMjByaW0lMjByZXBhaXJ8ZW58MHx8fHwxNzg4MjkwNTg1fDA&ixlib=rb-4.1.0&q=85",
+    "sports_car_wheel": "https://images.unsplash.com/photo-1515871401659-95f03af5fb36?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBjYXIlMjB3aGVlbHMlMjByaW0lMjByZXBhaXJ8ZW58MHx8fHwxNzg4MjkwNTg1fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "universal_guidelines": {
+    "no_universal_transition": true,
+    "interactive_data_testid_required": true,
+    "no_transparent_header_without_blur": true,
+    "spacing_generous": true
+  }
+}
